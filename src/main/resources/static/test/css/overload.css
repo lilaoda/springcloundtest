@@ -1,0 +1,384 @@
+body
+{
+    width: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #bedad1;
+}
+hr.divider_line
+{
+    width: 100%;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-top: 10px solid #bedad1;
+}
+
+div.body_div
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    text-align: center;
+    background-color: #fff;
+}
+ .loading_div.mui-fullscreen
+{
+    position: fixed;
+    z-index: 20;
+    display: none;
+
+    background-color: transparent;
+}
+div.loading_content_div{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 150px;
+    margin: 0 auto;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    overflow-x: hidden;
+    background-color: #dedede;
+}
+div.loading_content_div img{
+    margin: 8px;
+    position: absolute;
+    left: 20px;
+}
+div.loading_content_div label{
+    position: absolute;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+div.header_div
+{
+    display: inline-block;
+
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+
+    text-align: center;
+    /*background-color: #fdd;*/
+}
+div.content_div
+{
+    display: inline-block;
+    overflow-x: hidden;
+
+    width: 94%;
+    height: auto;
+    margin: 10px;
+    margin-top: 0;
+
+    text-align: center;
+    /*background-color: #fff;*/
+}
+div.footer_div
+{
+    display: inline-block;
+
+    width: 70%;
+    height: 50px;
+    margin: 10px;
+
+    text-align: center;
+    /*background-color: #fdd;*/
+}
+div.search_div
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 90%;
+    height: 45px;
+    margin: 0;
+
+    text-align: center;
+
+    border: 2px solid #69ab96;
+    border-radius: 8px 0 0 8px;
+    /*background-color: #0dd;*/
+}
+#waybillcode_input
+{
+    font-size: 18px;
+    line-height: 100%;
+
+    position: absolute;
+    left: 10px;
+
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    border: none;
+    outline: none;
+    /*background-color: #00f;*/
+}
+img[id = scan_img]
+{
+    position: absolute;
+    right: 0;
+
+    display: inline-block;
+
+    width: auto;
+    height: 80%;
+    padding-top: 10px;
+    padding-right: 10px;
+
+    border: none;
+    outline: none;
+}
+
+/* ------------------------查询运单结果的table---------------------*/
+table.info_tb
+{
+    font-size: 13px;
+
+    width: 100%;
+    margin: 0;
+
+    text-align: left;
+
+    color: #69ab96;
+    /*background-color: #fff;*/
+}
+
+table.info_tb td
+{
+    width: 50%;
+    height: 40px;
+}
+table.info_tb td > label
+{
+    margin: 0;
+}
+table.info_tb td > sup
+{
+    margin: 0;
+}
+table.info_tb td > input
+{
+    width: 35%;
+    height: 35px;
+    margin: 0;
+
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+    background-color: #e9e7e7;
+}
+table.info_tb td > input.input_num_float
+{
+    padding-left: 5px;
+    padding:0;
+    border: 1px solid #69ab96;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+img.del_img
+{
+    display: none;
+}
+/* ------------------------长宽高的table---------------------*/
+table.input_tb
+{
+    font-size: 14px;
+
+    width: 100%;
+    margin: 0;
+
+    border-collapse: collapse;
+
+    text-align: center;
+
+    color: #69ab96;
+    /*background-color: #fff;*/
+}
+table.input_tb th
+{
+    width: 25%;
+    height: 40px;
+
+    color: #69ab96;
+    border: 1px solid #cacaca;
+    background-color: #e9e7e7;
+}
+table.input_tb td
+{
+    width: 25%;
+    height: 40px;
+
+    border: 1px solid #cacaca;
+}
+table.input_tb td.last_td
+{
+    position: relative;
+}
+table.input_tb td > input
+{
+    line-height: 30px;
+
+    width: 70%;
+    margin: 0;
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    border: none;
+    outline: none;
+    /*background-color: #f00;*/
+}
+table.input_tb td > img
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 25%;
+    height: auto;
+}
+/* ------------------------上传照片---------------------*/
+div.img_div
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 95%;
+    height: auto;
+
+    text-align: center;
+}
+label.label_row_text
+{
+    position: absolute;
+    left: 10px;
+    color: #69ab96;
+    /*background-color: #0f0;*/
+}
+form.img_container
+{
+    margin: 0px;
+    margin-top: 10px;
+}
+div.Preview
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: auto;
+
+    text-align: left;
+    border: 1px dashed #cecece;
+}
+div.z_file
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*margin-right: 10px;*/
+    margin-left: 10px;
+}
+
+input#imageInput
+{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+}
+
+div.imgdiv
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+img.addImg
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 80px;
+    height: 80px;
+}
+img.imgdel
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 22px;
+    height: 22px;
+}
+img.addicon
+{
+    width: 80px;
+    height: 80px;
+}
+
+
+/* ------------------------底部按钮---------------------*/
+button
+{
+    font-size: 18px;
+
+    width: 35%;
+    padding: 8px;
+
+    text-align: center;
+
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #e15b69;
+}
+button#clear_btn
+{
+    float: left;
+}
+button#submit_btn
+{
+    float: right;
+}

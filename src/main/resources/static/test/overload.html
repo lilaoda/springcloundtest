@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>超重超方</title>
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/overload.css"/>
+    <link rel="stylesheet" type="text/css" href="css/imgPreview.css"/>
+</head>
+
+<body>
+<div class="body_div">
+    <div class="loading_div mui-fullscreen" id="loading">
+        <div class="loading_content_div">
+            <img src="img/loading.gif"/>
+            <label>请稍后...</label>
+        </div>
+    </div>
+    <!-- 头部 搜索框 -->
+    <div class="header_div">
+        <div class="search_div">
+            <input id="waybillcode_input" type="number" placeholder="请输入运单号" required/>
+            <img id="scan_img" src="img/icon_search_camera.png" onclick="scanWayBill()"/>
+        </div>
+    </div>
+    <hr class="divider_line"/>
+    <!--内容 查询运单结果 -->
+    <div class="content_div">
+        <table class="info_tb">
+            <tr>
+                <td>
+                    <label>开单重量：</label>
+                    <input id="open_weight" class="input_readonly" type="number" readonly="true"/>
+                    <label>kg</label>
+                </td>
+                <td>
+                    <label>实际重量：</label>
+                    <input id="fact_weight" class="input_num_float" type="number" onfocus="searchBillInfo()"/>
+                    <label>kg</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>开单体积：</label>
+                    <input id="open_volume" class="input_readonly" type="number" readonly="true"/>
+                    <label>m</label>
+                    <sup>3</sup>
+                </td>
+                <td>
+                    <label>实际体积：</label>
+                    <input id="fact_volume" class="input_readonly" type="number" readonly="true"/>
+                    <label>m</label>
+                    <sup>3</sup>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>开单件数：</label>
+                    <input id="open_count" class="input_readonly" type="number" readonly="true"/>
+                    <label>件</label>
+                </td>
+                <td>
+                    <label>实际件数：</label>
+                    <input id="fact_count" class="input_readonly" type="number" readonly="true"/>
+                    <label>件</label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr class="divider_line"/>
+    <!--内容 长宽高输入 -->
+    <div class="content_div">
+        <table class="input_tb" id="input_tb_id">
+            <thead>
+            <tr>
+                <th>长(cm)</th>
+                <th>宽(cm)</th>
+                <th>高(cm)</th>
+                <th>件数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="number" class="length_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="width_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="height_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td class="last_td">
+                    <input type="number" class="count_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="length_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="width_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="height_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td class="last_td">
+                    <input type="number" class="count_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="length_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="width_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td>
+                    <input type="number" class="height_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                </td>
+                <td class="last_td">
+                    <input type="number" class="count_input" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+                    <img src="img/icon_add.png" class="add_img" onclick="addRow(this)"/>
+                    <img src="img/icon_del.png" class="del_img" onclick="removeRow(this)"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr class="divider_line"/>
+    <!--内容 上传照片 -->
+    <div class="img_div">
+        <label class="label_row_text">上传照片：</label>
+        <br/>
+        <form class="img_container" action="">
+            <div id="imagePreview" class="Preview">
+                <div class="z_file">
+                    <img class="addicon" src="img/icon_addpicture.png" onclick="addImg()"/>
+                    <!--<input id="imageInput" type="file" accept="image/*" capture="camera" onchange="loadImageFile()" />-->
+                </div>
+            </div>
+        </form>
+    </div>
+    <br/>
+    <!--底部 提交按钮 -->
+    <div class="footer_div">
+        <button id="clear_btn" onclick="clearInfo()">清空</button>
+        <button id="submit_btn" onclick="submitInfo()">提交</button>
+    </div>
+    <!--底部 提交按钮 -->
+    <div class="footer_div">
+        <button id="call_android" onclick="callAndroidFun()">清空</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/mui.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/mui.previewimage.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/mui.zoom.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/overload.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="js/JsBridge.js"></script>-->
+<script>
+  //  mui.previewImage();
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener(
+                'WebViewJavascriptBridgeReady'
+                , function () {
+                    callback(WebViewJavascriptBridge)
+                },
+                false
+            );
+        }
+    }
+
+    connectWebViewJavascriptBridge(function (bridge) {
+        bridge.init(function (message, responseCallback) {
+            console.log('JS got a message', message);
+            var data = {
+                'Javascript Responds': '测试中文!'
+            };
+            console.log('JS responding with', data);
+            responseCallback(data);
+        });
+
+
+        bridge.registerHandler("functionInJs", function (data, responseCallback) {
+            document.getElementById("waybillcode_input").value = (data);
+            var responseData = "JS获取扫描到的条码成功";
+            responseCallback(responseData);
+        });
+
+        bridge.registerHandler("functionSetText", function (data, responseCallback) {
+            setWaybillCodeText(data);
+            var responseData = "我收到function22" + data;
+            responseCallback(responseData);
+        });
+        bridge.registerHandler("functionShowImg", function (data, responseCallback) {
+            var responseData = "我收到 functionShowImg" + data;
+            showImages(data);
+            responseCallback(responseData);
+        });
+    })
+
+    function callAndroidFun() {
+        window.WebViewJavascriptBridge.callHandler(
+            'jsCallAndroid'
+            , {'param': "jsCallAndroid from js"}
+            , function(responseData) {
+                console.log('jsCallAndroid result', responseData);
+            }
+        );
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhy.mybatis1.mapper.UserMapper">
+
+    <!--<insert id="addUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.lhy.mybatis1.entity.User">-->
+        <!--insert into user (name,age) values (#{name},#{age})-->
+    <!--</insert>-->
+    <!--<update id="update" parameterType="com.lhy.mybatis1.entity.User">-->
+        <!--update user set age =#{age} where name = #{name}-->
+    <!--</update>-->
+    <!--<delete id="delete" >-->
+        <!--delete from user where name = #{name}-->
+    <!--</delete>-->
+    <!--<select id="findAll" resultType="com.lhy.mybatis1.entity.User">-->
+        <!--select * from user-->
+    <!--</select>-->
+    <!--&lt;!&ndash;<select id="findOrderByUserId" resultType="com.lhy.mybatis1.vo.OrderDetail">&ndash;&gt;-->
+        <!--&lt;!&ndash;select t1.name as userName,&ndash;&gt;-->
+                <!--&lt;!&ndash;t1.age as userAge&ndash;&gt;-->
+        <!--&lt;!&ndash;from user t1&ndash;&gt;-->
+        <!--&lt;!&ndash;where t1.id = #{id}&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <resultMap id="orderDetailResultMap" type="com.lhy.mybatis1.vo.OrderDetail">
+        <id property="userId" column="userId"/>
+        <result property="userName" column="userName"/>
+        <result property="userAge" column="userAge"/>
+        <association property="goods" javaType="com.lhy.mybatis1.entity.Goods">
+            <id property="id" column="goodsId"/>
+            <result property="goodsName" column="goodsName"/>
+            <result property="goodsNum" column="goodsNum"/>
+        </association>
+        <collection property="orders" ofType="com.lhy.mybatis1.entity.Order">
+            <id property="id" column="orderId"/>
+            <result property="orderName" column="orderName"/>
+            <result property="orderNum" column="orderNum"/>
+            <result property="orderAddress" column="orderAddress"/>
+            <result property="goodsNum" column="goodsNum"/>
+            <!--<result property="userId" column="userId"/>-->
+        </collection>
+        <!--<discriminator javaType="int" column="orderId">-->
+            <!--<case value="1" resultType="">-->
+                <!--<result property=""-->
+            <!--</case>-->
+            <!--<case value="1" resultMap="..."></case>-->
+        <!--</discriminator>-->
+    </resultMap>
+    <select id="findOrderByUserId"  resultMap="orderDetailResultMap">
+        select t1.name as userName,
+                t1.age as userAge,
+                t1.id as userId,
+                t2.id as orderId,
+                t2.order_num as orderNum,
+                t2.order_name as orderName,
+                t2.order_address as orderAddress,
+                t3.id as goodsId,
+                t3.goods_num as goodsNum,
+                t3.goods_name as goodsName
+        from user t1
+        left join order_info t2 on t2.user_id = t1.id
+        left join goods t3 on t3.goods_num = t2.goods_num
+        where t1.id = #{id}
+    </select>
+
+</mapper>

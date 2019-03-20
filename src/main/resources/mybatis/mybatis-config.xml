@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--配置關閉緩存  -->
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/><!-- 將表的下劃線形式映射成駝峰形式 -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 事務超時時間 -->
+        <setting name="defaultStatementTimeout" value="600"/>
+
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+
+    </settings>
+
+    <typeAliases><!-- 定義對象的別名 ,在mapping.xml文件中非常有用-->
+        <!--<typeAlias type="com.xidian.house.common.model.User" alias="user"/>-->
+
+    </typeAliases>
+    <!--<mappers>&lt;!&ndash; 定義sql文件的邏輯 &ndash;&gt;-->
+    <!--<mapper class="tk.mybatis.mapper.common.Mapper"/>-->
+
+    <!--</mappers>-->
+</configuration>

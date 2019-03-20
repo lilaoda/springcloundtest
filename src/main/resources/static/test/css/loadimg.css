@@ -1,0 +1,275 @@
+body
+{
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    height: auto;
+    margin: 0 auto;
+}
+
+form
+{
+    margin: 10px;
+}
+form.img_container
+{
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+div.container
+{
+    width: 100%;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+div
+{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+
+    text-align: center;
+}
+
+
+div.header
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 45px;
+}
+
+div.billcode
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 70%;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+    text-align: center;
+
+    border: 2px solid #69ab96;
+    border-radius: 8px 0 0 8px;
+    background-image: url(icon_search_camera.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+div.searchdiv
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20%;
+    height: 30px;
+    margin-right: : 20px;
+    margin-bottom: 10px;
+
+    text-align: center;
+
+}
+div.Preview
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: auto;
+
+    text-align: left;
+
+    border: 1px dashed #cecece;
+    border-radius: 5px;
+}
+div.z_file
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+div.imgdiv
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+img.addImg
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 80px;
+    height: 80px;
+}
+img.imgdel
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 22px;
+    height: 22px;
+}
+img.addicon
+{
+    width: 80px;
+    height: 80px;
+}
+
+/*div.end
+{
+    float: bottom;
+}*/
+
+/* Full-width input fields */
+input[type=text]
+{
+    font-size: 16px;
+
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    margin: 10px 0;
+    padding: 5px 2px;
+
+    text-align: center;
+
+    border: 1px solid #69ab96;
+    border-radius: 5px;
+    outline: none;
+}
+select
+{
+    font-size: 16px;
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 50%;
+    margin: 10px 0;
+    padding: 5px 2px;
+    background-color: white;
+    text-align: center;
+
+    border: 1px solid #69ab96;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[id = waybillcode_input]
+{
+    font-size: 18px;
+    line-height: 30px;
+
+    box-sizing: border-box;
+    width: 70%;
+    height: 30px;
+    margin: 0 0;
+
+    text-align: center;
+
+    border: none;
+    outline: none;
+}
+
+
+input[id = imageInput]
+{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    width: 80px;
+    height: 80px;
+
+    opacity: 0;
+    border: none;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button
+{
+    font-size: 18px;
+
+    width: 80%;
+    margin: 8px 0;
+    padding: 5px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #e15b69;
+}
+img[id = scan_btn]
+{
+    display: inline-block;
+    float: right;
+
+    width: auto;
+    height: 25px;
+    margin-right: 10px;
+
+    border: none;
+    outline: none;
+}
+
+img[id = search_btn]
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    float: left;
+
+    width: auto;
+    height: 100%;
+    margin-bottom: 10px;
+
+    border: none;
+    outline: none;
+}
+label
+{
+    font-size: 16px;
+
+    color: #69ab96;
+}
+
+
+hr
+{
+    width: 100%;
+
+    color: #69ab96;
+
+    size: 10px;
+}
